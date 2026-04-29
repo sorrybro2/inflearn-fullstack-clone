@@ -3,6 +3,7 @@
 		"prisma": "^7.8.0"
 	},
 	"dependencies": {
+		"@auth/prisma-adapter": "^2.11.2",
 		"@nestjs/config": "^4.0.4",
 		"@prisma/client": "^7.8.0"
 	}
