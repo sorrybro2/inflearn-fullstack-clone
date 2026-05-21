@@ -116,3 +116,34 @@ pnpm dev
 
 - Frontend: http://localhost:3000
 - Backend:  http://localhost:3001
+- API 문서 (Swagger): http://localhost:3001/docs
+
+## 페이지별 기능
+
+| URL | 파일 | 하는 일 |
+|---|---|---|
+| `/` | [frontend/app/page.tsx](frontend/app/page.tsx) | 서버 컴포넌트. `auth()`로 세션 확인 → 로그인 상태면 이메일 + 로그아웃 버튼, 아니면 로그인 링크 표시. |
+| `/signup` | [frontend/app/(auth)/signup/page.tsx](frontend/app/(auth)/signup/page.tsx) | 클라이언트 컴포넌트. 이메일·비밀번호·비밀번호 확인 입력 → 서버 액션 `signUp()` 호출 → bcrypt 해싱 + Prisma로 User 생성 → 성공 시 `/signin`으로 이동. |
+| `/signin` | [frontend/app/(auth)/signin/page.tsx](frontend/app/(auth)/signin/page.tsx) | 클라이언트 컴포넌트. NextAuth `signIn("credentials")` 호출 → `authorize()`가 DB 조회 + 비밀번호 비교 → JWT 발급 후 쿠키 저장 → `/`로 redirect. |
+| `/api-test` | [frontend/app/api-test/page.tsx](frontend/app/api-test/page.tsx) | 서버 컴포넌트가 `lib/api.ts`로 백엔드 `/user-test`를 호출한 결과 + 클라이언트 컴포넌트가 React Query로 호출한 결과를 한 화면에 표시 (양쪽 다 같은 JWT 사용). |
+| `/api/auth/[...nextauth]` | [frontend/app/api/auth/[...nextauth]/route.ts](frontend/app/api/auth/[...nextauth]/route.ts) | NextAuth가 자동으로 제공하는 API 엔드포인트(signin/callback/signout 등). 직접 호출할 일은 없음. |
+
+### 백엔드 엔드포인트
+
+| URL | 파일 | 인증 | 응답 |
+|---|---|---|---|
+| `GET /` | [backend/src/app.controller.ts](backend/src/app.controller.ts) | 없음 | `"Hello World!"` |
+| `GET /user-test` | [backend/src/app.controller.ts](backend/src/app.controller.ts) | `AccessTokenGuard` (Bearer JWT) | `"유저 이메일: <email>"` (토큰의 페이로드에서 추출) |
+| `GET /docs` | [backend/src/main.ts](backend/src/main.ts) | 없음 | Swagger UI |
+
+## 학습 노트 (docs/)
+
+리액트·Next·Nest·Prisma·React Query·인증 흐름을 이 프로젝트 코드를 기준으로 정리한 복습 노트.
+
+- [docs/README.md](docs/README.md) — 인덱스 (여기부터 시작)
+- [01. React 기초](docs/01-react-basics.md)
+- [02. Next.js App Router](docs/02-nextjs-app-router.md)
+- [03. NestJS](docs/03-nestjs.md)
+- [04. React Query](docs/04-react-query.md)
+- [05. Prisma ORM](docs/05-prisma.md)
+- [06. 인증 전체 흐름](docs/06-auth-flow.md)
