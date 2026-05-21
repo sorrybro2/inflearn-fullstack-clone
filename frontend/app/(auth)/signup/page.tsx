@@ -1,3 +1,4 @@
+// [개념] 클라이언트 컴포넌트에서 서버 액션 호출 - signUp()은 "use server" 함수, 호출은 평범한 함수 호출처럼 보이지만 실제론 서버에서 실행됨 → docs/02-nextjs-app-router.md (#4)
 "use client";
 
 import Link from "next/link";

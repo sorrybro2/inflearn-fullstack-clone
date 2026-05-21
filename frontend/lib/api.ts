@@ -1,3 +1,4 @@
+// [개념] 서버 액션 기반 API 클라이언트 - next/headers의 cookies()로 쿠키 읽어 Authorization: Bearer 헤더에 JWT 첨부 → docs/06-auth-flow.md (#5)
 "use server";
 
 import {cookies} from "next/headers"

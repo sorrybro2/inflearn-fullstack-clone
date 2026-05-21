@@ -1,3 +1,4 @@
+// [개념] NestJS 부트스트랩 + Swagger - NestFactory.create()로 앱 생성, addBearerAuth로 토큰 입력 UI 추가, PORT 3001 → docs/03-nestjs.md (#7)
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';

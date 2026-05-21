@@ -1,3 +1,4 @@
+// [개념] 서버 컴포넌트 안에서 클라이언트 컴포넌트 import - 같은 페이지에 두 방식 혼용 가능. 서버에선 await fetch, 클라이언트에선 React Query → docs/02-nextjs-app-router.md (#2)
  import * as api from "@/lib/api";
 import ClientTest from "./client-test";
 

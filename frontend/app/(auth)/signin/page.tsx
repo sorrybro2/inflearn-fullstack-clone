@@ -1,3 +1,4 @@
+// [개념] "use client" + useState - 입력 상태를 컴포넌트가 기억. signIn()이 NextAuth authorize → JWT 발급 → 쿠키 저장 → 리다이렉트 → docs/01-react-basics.md (#4), docs/06-auth-flow.md (#3)
 "use client";
 
 import Link from "next/link";

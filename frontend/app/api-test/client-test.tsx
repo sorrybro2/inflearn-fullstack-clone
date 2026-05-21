@@ -1,3 +1,4 @@
+// [개념] useQuery - 서버 데이터를 가져오면서 로딩/에러/캐싱을 자동 처리. queryKey는 캐시 주소 → docs/04-react-query.md (#3)
 "use client";
 
 import { useApi } from "@/hooks/useApi";

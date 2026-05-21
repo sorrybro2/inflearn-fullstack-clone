@@ -1,3 +1,4 @@
+// [개념] Next.js Root Layout - 모든 페이지 공통 wrapper. 페이지 전환 시 리렌더 안 됨 → docs/02-nextjs-app-router.md (#3)
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

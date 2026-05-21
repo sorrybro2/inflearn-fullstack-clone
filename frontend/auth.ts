@@ -1,3 +1,4 @@
+// [개념] NextAuth v5 (Auth.js) 설정 - Credentials provider + JWT 세션 + 직접 jsonwebtoken으로 sign/verify (백엔드와 secret 공유) → docs/06-auth-flow.md
 import NextAuth from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/prisma";

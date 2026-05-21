@@ -1,3 +1,4 @@
+// [개념] 서버 컴포넌트 (async function) - await로 직접 세션/DB 접근 가능, useState 등 클라이언트 훅은 사용 불가 → docs/02-nextjs-app-router.md (#2)
 import { auth } from "@/auth";
 import { signOut } from "@/auth";
 import Link from "next/link";

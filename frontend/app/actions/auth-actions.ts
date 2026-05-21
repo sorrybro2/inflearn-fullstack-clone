@@ -1,3 +1,4 @@
+// [개념] 서버 액션 - "use server" 파일의 export는 클라이언트에서 import해 호출 가능하지만 실행은 서버. 비밀번호 해싱 + Prisma DB 쓰기 → docs/02-nextjs-app-router.md (#4), docs/06-auth-flow.md (#2)
 "use server";
 
 import { saltAndHashPassword } from "@/lib/password-utils";

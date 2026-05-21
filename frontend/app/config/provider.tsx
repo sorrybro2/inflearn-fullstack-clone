@@ -1,3 +1,4 @@
+// [개념] React Query + Jotai 전역 Provider. layout.tsx에서 children 감쌈 → docs/04-react-query.md (#2)
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
